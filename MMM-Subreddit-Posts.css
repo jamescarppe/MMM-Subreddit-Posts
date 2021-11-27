@@ -1,0 +1,7 @@
+.reddit-posts td:not(:last-child) {
+  padding-right: 1em;
+}
+
+.reddit-posts td {
+  white-space: nowrap;
+}
