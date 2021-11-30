@@ -4,8 +4,7 @@ Module.register('MMM-Subreddit-Posts', {
     maxTitleLength: 100,
     postCount: 10,
     subReddit: 'portainer',
-    sort: 'created',
-    direction: 'desc',
+    sort: 'hot',
   },
 
   getStyles: function () {
@@ -33,7 +32,7 @@ Module.register('MMM-Subreddit-Posts', {
   },
 
   updateData: async function () {
-    const resPosts = await fetch(`https://www.reddit.com/r/${this.config.subReddit}/.json?limit=${this.config.postCount}`);
+    const resPosts = await fetch(`https://www.reddit.com/r/${this.config.subReddit}/${this.config.sort}/.json?limit=${this.config.postCount}`);
     const subData = {
       title: `r/${this.config.subReddit}`,
     }
